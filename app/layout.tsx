@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bde-veteuropea.alex-prt.chatgpt.site"),
+  metadataBase: new URL("https://bdeveteuropea.github.io"),
   title: "BDE Veteuropea Madrid",
   description:
     "Veteuropea, le BDE des étudiants vétérinaires à Madrid. Événements, rencontres et vie étudiante à l’Universidad Europea.",
