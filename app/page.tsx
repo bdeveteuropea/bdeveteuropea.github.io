@@ -15,18 +15,27 @@ const experienceItems = [
     title: "Rassembler",
     label: "Faire campus commun",
     text: "Créer des rencontres qui rapprochent les promos et font de Madrid un vrai terrain de vie collective.",
+    image: "/role-rassembler.jpg",
+    imageAlt: "Étudiants Veteuropea réunis autour d’une grande table lors d’une soirée",
+    imagePosition: "50% 68%",
   },
   {
     number: "02",
     title: "Accompagner",
     label: "Ne jamais rester seul",
     text: "Partager les bons repères, relayer les besoins et rendre l’arrivée comme le quotidien beaucoup plus simples.",
+    image: "/role-accompagner.jpg",
+    imageAlt: "Deux étudiantes Veteuropea présentant des conseils de gestion du temps en cours",
+    imagePosition: "50% 67%",
   },
   {
     number: "03",
     title: "Faire vibrer",
     label: "Des moments qui comptent",
     text: "Imaginer des expériences fortes, généreuses et bien pensées — sur le campus comme ailleurs.",
+    image: "/role-faire-vibrer.jpg",
+    imageAlt: "Boule à facettes et décor lumineux pendant une soirée Veteuropea",
+    imagePosition: "50% 60%",
   },
 ];
 
@@ -478,6 +487,22 @@ export default function Home() {
             </div>
 
             <div className="experience-display" aria-live="polite">
+              <div className="display-media-stack">
+                {experienceItems.map((item, index) => (
+                  <div
+                    className={`display-media ${activeExperience === index ? "is-active" : ""}`}
+                    key={item.image}
+                    aria-hidden={activeExperience !== index}
+                  >
+                    <img
+                      src={item.image}
+                      alt={activeExperience === index ? item.imageAlt : ""}
+                      style={{ objectPosition: item.imagePosition }}
+                    />
+                    <span>PHOTO · {item.number}</span>
+                  </div>
+                ))}
+              </div>
               <div className="display-orbit" aria-hidden="true">
                 <span>{experienceItems[activeExperience].number}</span>
               </div>
