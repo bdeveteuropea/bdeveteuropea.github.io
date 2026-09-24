@@ -30,89 +30,148 @@ const experienceItems = [
   },
 ];
 
-const upcomingEvents = [
+const calendarEvents = [
   {
-    date: "25—27",
-    month: "SEP",
-    weekday: "VEN. — DIM.",
-    dateTime: "2026-09-25/2026-09-27",
-    title: "WEI d’intégration",
-    detail: "Lloret del Mar",
-    tag: "WEEK-END",
-  },
-  {
-    date: "08",
-    month: "OCT",
-    weekday: "JEUDI",
-    dateTime: "2026-10-08",
-    title: "Jowke White Party",
-    detail: "× Kinespana × Dentalife",
-    tag: "WHITE PARTY",
-  },
-  {
-    date: "31",
-    month: "OCT",
-    weekday: "SAMEDI",
-    dateTime: "2026-10-31",
-    title: "Soirée Halloween",
-    detail: "La nuit la plus sombre de l’année",
-    tag: "HALLOWEEN",
-  },
-  {
-    date: "27",
-    month: "NOV",
-    weekday: "VENDREDI",
-    dateTime: "2026-11-27",
-    title: "Rooftop + boîte",
-    detail: "Madrid",
-    tag: "NIGHT OUT",
-  },
-  {
+    start: "2026-09-11",
+    end: "2026-09-11",
     date: "11",
-    month: "DÉC",
+    startDay: "11",
+    month: "SEP",
+    monthLong: "SEPTEMBRE",
     weekday: "VENDREDI",
-    dateTime: "2026-12-11",
     title: "NOU Club",
+    featureTitle: "NOU",
+    featureAccent: "Club",
     detail: "Madrid",
     tag: "CLUB",
   },
   {
-    date: "16",
-    month: "DÉC",
-    weekday: "MERCREDI",
-    dateTime: "2026-12-16",
+    start: "2026-09-19",
+    end: "2026-09-19",
+    date: "19",
+    startDay: "19",
+    month: "SEP",
+    monthLong: "SEPTEMBRE",
+    weekday: "SAMEDI",
     title: "Gin&Ron",
+    featureTitle: "Gin&Ron",
+    featureAccent: "Fêtes de Bayonne",
+    detail: "Soirée Fêtes de Bayonne",
+    tag: "SOIRÉE",
+  },
+  {
+    start: "2026-09-25",
+    end: "2026-09-27",
+    date: "25—27",
+    startDay: "25",
+    endDay: "27",
+    month: "SEP",
+    monthLong: "SEPTEMBRE",
+    weekday: "VEN. — DIM.",
+    title: "WEI d’intégration",
+    featureTitle: "WEI",
+    featureAccent: "d’intégration",
+    detail: "Lloret del Mar",
+    tag: "WEEK-END",
+  },
+  {
+    start: "2026-10-08",
+    end: "2026-10-08",
+    date: "08",
+    startDay: "08",
+    month: "OCT",
+    monthLong: "OCTOBRE",
+    weekday: "JEUDI",
+    title: "Jowke White Party",
+    featureTitle: "Jowke",
+    featureAccent: "White Party",
+    detail: "× Kinespana × Dentalife",
+    tag: "WHITE PARTY",
+  },
+  {
+    start: "2026-10-31",
+    end: "2026-10-31",
+    date: "31",
+    startDay: "31",
+    month: "OCT",
+    monthLong: "OCTOBRE",
+    weekday: "SAMEDI",
+    title: "Soirée Halloween",
+    featureTitle: "Soirée",
+    featureAccent: "Halloween",
+    detail: "La nuit la plus sombre de l’année",
+    tag: "HALLOWEEN",
+  },
+  {
+    start: "2026-11-27",
+    end: "2026-11-27",
+    date: "27",
+    startDay: "27",
+    month: "NOV",
+    monthLong: "NOVEMBRE",
+    weekday: "VENDREDI",
+    title: "Rooftop + boîte",
+    featureTitle: "Rooftop",
+    featureAccent: "+ boîte",
+    detail: "Madrid",
+    tag: "NIGHT OUT",
+  },
+  {
+    start: "2026-12-11",
+    end: "2026-12-11",
+    date: "11",
+    startDay: "11",
+    month: "DÉC",
+    monthLong: "DÉCEMBRE",
+    weekday: "VENDREDI",
+    title: "NOU Club",
+    featureTitle: "NOU",
+    featureAccent: "Club",
+    detail: "Madrid",
+    tag: "CLUB",
+  },
+  {
+    start: "2026-12-16",
+    end: "2026-12-16",
+    date: "16",
+    startDay: "16",
+    month: "DÉC",
+    monthLong: "DÉCEMBRE",
+    weekday: "MERCREDI",
+    title: "Gin&Ron",
+    featureTitle: "Gin&Ron",
+    featureAccent: "Madrid",
     detail: "Madrid",
     tag: "SOIRÉE",
   },
   {
+    start: "2026-12-18",
+    end: "2026-12-18",
     date: "18",
+    startDay: "18",
     month: "DÉC",
+    monthLong: "DÉCEMBRE",
     weekday: "VENDREDI",
-    dateTime: "2026-12-18",
     title: "Évent Rooftop Madrid",
+    featureTitle: "Évent Rooftop",
+    featureAccent: "Madrid",
     detail: "× Dentalife",
     tag: "ROOFTOP",
   },
 ];
 
-const pastEvents = [
-  {
-    date: "11",
-    month: "SEP",
-    weekday: "VENDREDI",
-    dateTime: "2026-09-11",
-    title: "NOU Club",
-  },
-  {
-    date: "19",
-    month: "SEP",
-    weekday: "SAMEDI",
-    dateTime: "2026-09-19",
-    title: "Gin&Ron",
-    detail: "Soirée Fêtes de Bayonne",
-  },
-];
+const agendaFallbackDate = "2026-09-24";
+
+function getMadridDateKey() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Madrid",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
 
 const teamRoles = ["Bureau", "Événementiel", "Communication", "Partenariats"];
 
@@ -138,6 +197,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeExperience, setActiveExperience] = useState(0);
+  const [agendaToday, setAgendaToday] = useState(agendaFallbackDate);
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -158,6 +218,13 @@ export default function Home() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const updateAgendaDate = () => setAgendaToday(getMadridDateKey());
+    updateAgendaDate();
+    const timer = window.setInterval(updateAgendaDate, 60_000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -184,6 +251,12 @@ export default function Home() {
   };
 
   const closeMenu = () => setMenuOpen(false);
+  const upcomingEvents = calendarEvents.filter((event) => event.end >= agendaToday);
+  const pastEvents = calendarEvents.filter((event) => event.end < agendaToday).slice().reverse();
+  const featuredEvent = upcomingEvents[0];
+  const featuredEventIsLive = featuredEvent
+    ? featuredEvent.start <= agendaToday && featuredEvent.end >= agendaToday
+    : false;
 
   return (
     <div className="site-shell">
@@ -444,22 +517,42 @@ export default function Home() {
           </div>
 
           <div className="agenda-board" data-reveal>
-            <div className="agenda-feature">
-              <div className="feature-label">
-                <span className="live-dot" /> PROCHAIN ÉVÉNEMENT
+            {featuredEvent ? (
+              <div className="agenda-feature" aria-live="polite">
+                <div className="feature-label">
+                  <span className="live-dot" />
+                  {featuredEventIsLive ? "EN CE MOMENT" : "PROCHAIN ÉVÉNEMENT"}
+                </div>
+                <time className="agenda-feature-date" dateTime={featuredEvent.start}>
+                  <span>{featuredEvent.startDay}</span>
+                  {featuredEvent.endDay && (
+                    <>
+                      <i>→</i>
+                      <span>{featuredEvent.endDay}</span>
+                    </>
+                  )}
+                  <small>{featuredEvent.monthLong}</small>
+                </time>
+                <div className="feature-copy">
+                  <p>{featuredEvent.weekday} · {featuredEvent.detail.toUpperCase()}</p>
+                  <h3>
+                    {featuredEvent.featureTitle}
+                    <br />
+                    <em>{featuredEvent.featureAccent}</em>
+                  </h3>
+                </div>
+                <span className="feature-v">V</span>
               </div>
-              <time className="agenda-feature-date" dateTime="2026-09-25">
-                <span>25</span>
-                <i>→</i>
-                <span>27</span>
-                <small>SEPTEMBRE</small>
-              </time>
-              <div className="feature-copy">
-                <p>VEN. — DIM. · LLORET DEL MAR</p>
-                <h3>WEI<br /><em>d’intégration</em></h3>
+            ) : (
+              <div className="agenda-feature agenda-feature-empty" aria-live="polite">
+                <div className="feature-label">SAISON 2026 · TERMINÉE</div>
+                <div className="feature-copy">
+                  <p>LE PROCHAIN RENDEZ-VOUS SE PRÉPARE</p>
+                  <h3>La suite<br /><em>arrive bientôt.</em></h3>
+                </div>
+                <span className="feature-v">V</span>
               </div>
-              <span className="feature-v">V</span>
-            </div>
+            )}
             <div className="agenda-list">
               <div className="agenda-list-heading">
                 <span>À VENIR</span>
@@ -468,9 +561,9 @@ export default function Home() {
               {upcomingEvents.slice(1).map((item) => (
                 <article
                   className="agenda-row"
-                  key={item.dateTime}
+                  key={item.start}
                 >
-                  <time className="agenda-date" dateTime={item.dateTime}>
+                  <time className="agenda-date" dateTime={item.start}>
                     <strong>{item.date}</strong>
                     <span>{item.month}</span>
                   </time>
@@ -483,6 +576,11 @@ export default function Home() {
                   <span className="agenda-row-mark" aria-hidden="true">↗</span>
                 </article>
               ))}
+              {upcomingEvents.length <= 1 && (
+                <div className="agenda-empty-row">
+                  <span>Les prochaines dates seront annoncées ici.</span>
+                </div>
+              )}
             </div>
           </div>
 
@@ -507,12 +605,12 @@ export default function Home() {
                 <p>LES PREMIERS SOUVENIRS</p>
                 <h3>Événements passés</h3>
               </div>
-              <span>SEPTEMBRE 2026 · {pastEvents.length} DATES</span>
+              <span>SAISON 2026/27 · {pastEvents.length} DATES</span>
             </div>
             <div className="past-grid">
               {pastEvents.map((item) => (
-                <article className="past-card" key={item.dateTime}>
-                  <time dateTime={item.dateTime}>
+                <article className="past-card" key={item.start}>
+                  <time dateTime={item.start}>
                     <strong>{item.date}</strong>
                     <span>{item.month}</span>
                   </time>
