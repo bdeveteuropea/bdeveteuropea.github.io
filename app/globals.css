@@ -765,6 +765,18 @@ button { cursor: pointer; }
   letter-spacing: 0.18em;
 }
 .agenda-list-heading small { font: inherit; color: #a48343; }
+.agenda-empty-row {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  padding: 35px;
+  color: #71808d;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
 .agenda-row {
   display: grid;
   grid-template-columns: 70px minmax(0, 1fr) auto 20px;
