@@ -110,7 +110,7 @@ button { cursor: pointer; }
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  transform: translateX(5%) scale(1.12);
+  transform: translateX(10%) scale(1.22);
   transform-origin: center;
 }
 .brand-name {
@@ -351,7 +351,7 @@ button { cursor: pointer; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: translateX(5%) scale(1.12);
+  transform: translateX(10%) scale(1.22);
   transform-origin: center;
 }
 .orbit { position: absolute; border: 1px solid rgba(223, 189, 114, 0.24); border-radius: 50%; }
