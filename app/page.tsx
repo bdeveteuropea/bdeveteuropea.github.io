@@ -30,10 +30,88 @@ const experienceItems = [
   },
 ];
 
-const agendaItems = [
-  { index: "01", title: "Week-ends & voyages", tag: "S’ÉVADER" },
-  { index: "02", title: "Soirées & rencontres", tag: "SE RETROUVER" },
-  { index: "03", title: "Campus & entraide", tag: "SE SOUTENIR" },
+const upcomingEvents = [
+  {
+    date: "25—27",
+    month: "SEP",
+    weekday: "VEN. — DIM.",
+    dateTime: "2026-09-25/2026-09-27",
+    title: "WEI d’intégration",
+    detail: "Lloret del Mar",
+    tag: "WEEK-END",
+  },
+  {
+    date: "08",
+    month: "OCT",
+    weekday: "JEUDI",
+    dateTime: "2026-10-08",
+    title: "Jowke White Party",
+    detail: "× Kinespana × Dentalife",
+    tag: "WHITE PARTY",
+  },
+  {
+    date: "31",
+    month: "OCT",
+    weekday: "SAMEDI",
+    dateTime: "2026-10-31",
+    title: "Soirée Halloween",
+    detail: "La nuit la plus sombre de l’année",
+    tag: "HALLOWEEN",
+  },
+  {
+    date: "27",
+    month: "NOV",
+    weekday: "VENDREDI",
+    dateTime: "2026-11-27",
+    title: "Rooftop + boîte",
+    detail: "Madrid",
+    tag: "NIGHT OUT",
+  },
+  {
+    date: "11",
+    month: "DÉC",
+    weekday: "VENDREDI",
+    dateTime: "2026-12-11",
+    title: "NOU Club",
+    detail: "Madrid",
+    tag: "CLUB",
+  },
+  {
+    date: "16",
+    month: "DÉC",
+    weekday: "MERCREDI",
+    dateTime: "2026-12-16",
+    title: "Gin&Ron",
+    detail: "Madrid",
+    tag: "SOIRÉE",
+  },
+  {
+    date: "18",
+    month: "DÉC",
+    weekday: "VENDREDI",
+    dateTime: "2026-12-18",
+    title: "Évent Rooftop Madrid",
+    detail: "× Dentalife",
+    tag: "ROOFTOP",
+  },
+];
+
+const pastEvents = [
+  {
+    date: "11",
+    month: "SEP",
+    weekday: "VENDREDI",
+    dateTime: "2026-09-11",
+    title: "NOU Club",
+  },
+  {
+    date: "19",
+    month: "SEP",
+    weekday: "SAMEDI",
+    dateTime: "2026-09-19",
+    title: "Gin&Ron",
+    detail: "Soirée Fêtes de Bayonne",
+  },
 ];
 
 const teamRoles = ["Bureau", "Événementiel", "Communication", "Partenariats"];
@@ -347,10 +425,10 @@ export default function Home() {
               <p>LES TEMPS FORTS</p>
             </div>
             <div className="agenda-title">
-              <p className="section-overline">L’AGENDA SE PRÉPARE</p>
+              <p className="section-overline">SAISON 2026/27</p>
               <h2>
-                La suite arrive.
-                <em>Reste connecté.</em>
+                Les dates sont posées.
+                <em>À nous de les vivre.</em>
               </h2>
             </div>
             <a
@@ -368,28 +446,83 @@ export default function Home() {
           <div className="agenda-board" data-reveal>
             <div className="agenda-feature">
               <div className="feature-label">
-                <span className="live-dot" /> PROCHAINEMENT
+                <span className="live-dot" /> PROCHAIN ÉVÉNEMENT
               </div>
+              <time className="agenda-feature-date" dateTime="2026-09-25">
+                <span>25</span>
+                <i>→</i>
+                <span>27</span>
+                <small>SEPTEMBRE</small>
+              </time>
               <div className="feature-copy">
-                <p>MADRID · 2026/27</p>
-                <h3>Une nouvelle saison<br />à vivre ensemble.</h3>
+                <p>VEN. — DIM. · LLORET DEL MAR</p>
+                <h3>WEI<br /><em>d’intégration</em></h3>
               </div>
               <span className="feature-v">V</span>
             </div>
             <div className="agenda-list">
-              {agendaItems.map((item) => (
-                <a
+              <div className="agenda-list-heading">
+                <span>À VENIR</span>
+                <small>{upcomingEvents.length} DATES</small>
+              </div>
+              {upcomingEvents.slice(1).map((item) => (
+                <article
                   className="agenda-row"
-                  key={item.index}
-                  href="https://www.instagram.com/bde.veteuropea/"
-                  target="_blank"
-                  rel="noreferrer"
+                  key={item.dateTime}
                 >
-                  <span className="agenda-index">{item.index}</span>
-                  <strong>{item.title}</strong>
-                  <small>{item.tag}</small>
-                  <ArrowUpRight />
-                </a>
+                  <time className="agenda-date" dateTime={item.dateTime}>
+                    <strong>{item.date}</strong>
+                    <span>{item.month}</span>
+                  </time>
+                  <div className="agenda-event-copy">
+                    <small>{item.weekday}</small>
+                    <strong>{item.title}</strong>
+                    <span>{item.detail}</span>
+                  </div>
+                  <span className="agenda-tag">{item.tag}</span>
+                  <span className="agenda-row-mark" aria-hidden="true">↗</span>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="agenda-recurring" data-reveal>
+            <div className="recurring-orbit" aria-hidden="true">
+              <span>RUN</span>
+            </div>
+            <div className="recurring-copy">
+              <p>LE RENDEZ-VOUS HEBDOMADAIRE</p>
+              <h3>Running Club</h3>
+            </div>
+            <div className="recurring-when">
+              <span>TOUS LES</span>
+              <strong>MERCREDIS</strong>
+            </div>
+            <span className="recurring-city">MADRID · VETEUROPEA</span>
+          </div>
+
+          <div className="agenda-past" data-reveal>
+            <div className="agenda-subheading">
+              <div>
+                <p>LES PREMIERS SOUVENIRS</p>
+                <h3>Événements passés</h3>
+              </div>
+              <span>SEPTEMBRE 2026 · {pastEvents.length} DATES</span>
+            </div>
+            <div className="past-grid">
+              {pastEvents.map((item) => (
+                <article className="past-card" key={item.dateTime}>
+                  <time dateTime={item.dateTime}>
+                    <strong>{item.date}</strong>
+                    <span>{item.month}</span>
+                  </time>
+                  <div>
+                    <small>{item.weekday}</small>
+                    <h4>{item.title}</h4>
+                    {item.detail && <p>{item.detail}</p>}
+                  </div>
+                  <span className="past-status">PASSÉ</span>
+                </article>
               ))}
             </div>
           </div>
