@@ -214,7 +214,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual reveal reveal-3" aria-label="Emblème panthère Veteuropea">
+          <div className="hero-visual" aria-label="Emblème panthère Veteuropea">
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
             <div className="panther-halo" />
