@@ -499,7 +499,6 @@ export default function Home() {
                       alt={activeExperience === index ? item.imageAlt : ""}
                       style={{ objectPosition: item.imagePosition }}
                     />
-                    <span>PHOTO · {item.number}</span>
                   </div>
                 ))}
               </div>
