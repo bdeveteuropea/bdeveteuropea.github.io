@@ -656,26 +656,12 @@ button { cursor: pointer; }
   object-fit: cover;
   filter: saturate(0.86) contrast(1.04);
 }
-.display-media > span {
-  position: absolute;
-  z-index: 2;
-  top: 28px;
-  left: 30px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(11, 29, 47, 0.38);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.5rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  backdrop-filter: blur(10px);
-}
 .display-orbit {
   position: absolute;
   z-index: 3;
-  top: 38px;
-  right: 52px;
-  width: min(19vw, 230px);
+  top: 20px;
+  right: 20px;
+  width: clamp(100px, 9.5vw, 135px);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -694,7 +680,7 @@ button { cursor: pointer; }
   animation: spin 24s linear infinite;
 }
 .display-orbit::after { inset: -8%; border-style: solid; border-color: rgba(255, 255, 255, 0.06); animation-direction: reverse; }
-.display-orbit span { color: var(--gold-light); font-family: Georgia, serif; font-size: 3rem; font-style: italic; }
+.display-orbit span { color: var(--gold-light); font-family: Georgia, serif; font-size: 2rem; font-style: italic; }
 .display-copy { position: relative; z-index: 3; max-width: 530px; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.34); }
 .display-copy > p { margin: 0 0 12px; color: var(--cyan); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em; }
 .display-copy h3 { margin: 0 0 15px; font-size: clamp(2.4rem, 4vw, 4.7rem); font-weight: 650; letter-spacing: -0.055em; }
@@ -1114,7 +1100,7 @@ button { cursor: pointer; }
   .experience-heading { grid-template-columns: 180px 1fr; gap: 50px; }
   .experience-interface { grid-template-columns: 1fr; max-width: 820px; }
   .experience-display { min-height: 440px; border-top: 1px solid rgba(255, 255, 255, 0.12); border-left: 0; }
-  .display-orbit { width: 220px; }
+  .display-orbit { width: 125px; }
   .agenda-top { grid-template-columns: 180px 1fr; gap: 50px; }
   .round-link { grid-column: 2; width: 122px; }
   .agenda-board { grid-template-columns: 1fr; max-width: 880px; }
@@ -1176,7 +1162,8 @@ button { cursor: pointer; }
   .experience-row-title small { font-size: 0.55rem; }
   .experience-plus { width: 32px; height: 32px; }
   .experience-display { min-height: 415px; padding: 28px 24px 38px; }
-  .display-orbit { top: 28px; right: 28px; width: 170px; }
+  .display-orbit { top: 16px; right: 16px; width: 100px; }
+  .display-orbit span { font-size: 1.6rem; }
   .display-copy h3 { font-size: 2.8rem; }
   .display-watermark { font-size: 16rem; }
   .round-link { grid-column: 1; width: 112px; }
