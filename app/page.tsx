@@ -295,7 +295,7 @@ export default function Home() {
 
         <a
           className="header-cta"
-          href="https://www.instagram.com/bde.veteuropea/"
+          href="https://linktr.ee/bdeveteuropea"
           target="_blank"
           rel="noreferrer"
         >
@@ -325,15 +325,35 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <a
-            className="mobile-social"
-            href="https://www.instagram.com/bde.veteuropea/"
-            target="_blank"
-            rel="noreferrer"
-            tabIndex={menuOpen ? 0 : -1}
-          >
-            @bde.veteuropea <ArrowUpRight />
-          </a>
+          <div className="mobile-socials" aria-label="Réseaux sociaux Veteuropea">
+            <a
+              className="mobile-social"
+              href="https://www.instagram.com/bde.veteuropea/"
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              Instagram <ArrowUpRight />
+            </a>
+            <a
+              className="mobile-social"
+              href="https://www.tiktok.com/@bdeveteuropea"
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              TikTok <ArrowUpRight />
+            </a>
+            <a
+              className="mobile-social"
+              href="https://linktr.ee/bdeveteuropea"
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              Linktree <ArrowUpRight />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -700,7 +720,7 @@ export default function Home() {
             <em>l’expérience ?</em>
           </h2>
           <a
-            href="https://www.instagram.com/bde.veteuropea/"
+            href="https://linktr.ee/bdeveteuropea"
             target="_blank"
             rel="noreferrer"
           >
@@ -727,14 +747,32 @@ export default function Home() {
           <a href="#agenda">Agenda</a>
           <a href="#equipe">L’équipe</a>
         </div>
-        <a
-          className="footer-instagram"
-          href="https://www.instagram.com/bde.veteuropea/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          INSTAGRAM <ArrowUpRight />
-        </a>
+        <div className="footer-socials" aria-label="Réseaux sociaux Veteuropea">
+          <a
+            className="footer-social"
+            href="https://www.instagram.com/bde.veteuropea/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            INSTAGRAM <ArrowUpRight />
+          </a>
+          <a
+            className="footer-social"
+            href="https://www.tiktok.com/@bdeveteuropea"
+            target="_blank"
+            rel="noreferrer"
+          >
+            TIKTOK <ArrowUpRight />
+          </a>
+          <a
+            className="footer-social"
+            href="https://linktr.ee/bdeveteuropea"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LINKTREE <ArrowUpRight />
+          </a>
+        </div>
         <div className="footer-bottom">
           <span>© 2026 VETEUROPEA</span>
           <span>HECHO CON ENERGÍA EN MADRID</span>

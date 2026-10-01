@@ -1036,8 +1036,10 @@ button { cursor: pointer; }
 .footer-links { display: grid; grid-template-columns: repeat(2, auto); gap: 13px 45px; }
 .footer-links a { color: rgba(255, 255, 255, 0.58); font-size: 0.69rem; font-weight: 650; transition: color 200ms ease; }
 .footer-links a:hover { color: var(--gold-light); }
-.footer-instagram { display: flex; align-items: center; gap: 12px; color: var(--gold-light); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; }
-.footer-instagram svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.footer-socials { display: flex; align-items: center; gap: 22px; }
+.footer-social { display: flex; align-items: center; gap: 9px; color: var(--gold-light); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; transition: color 200ms ease; }
+.footer-social:hover { color: var(--cyan); }
+.footer-social svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.4; }
 .footer-bottom {
   grid-column: 1 / -1;
   display: flex;
@@ -1096,7 +1098,8 @@ button { cursor: pointer; }
     letter-spacing: -0.05em;
   }
   .mobile-menu nav span { color: var(--gold); font-size: 0.58rem; letter-spacing: 0.1em; }
-  .mobile-social { display: flex; align-items: center; gap: 10px; margin-top: 32px; color: var(--gold-light); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; }
+  .mobile-socials { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 32px; }
+  .mobile-social { display: flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; }
   .hero { min-height: 940px; align-items: start; padding-top: 155px; }
   .hero-copy { width: min(100%, 720px); }
   .hero-visual {
@@ -1124,7 +1127,7 @@ button { cursor: pointer; }
   .team-emblem { min-height: 650px; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
   .team-copy { min-height: 820px; }
   .site-footer { grid-template-columns: 1fr auto; }
-  .footer-instagram { grid-column: 2; grid-row: 1; }
+  .footer-socials { grid-column: 2; grid-row: 1; align-items: flex-start; flex-direction: column; gap: 12px; }
   .footer-links { grid-column: 1 / -1; }
 }
 
@@ -1217,7 +1220,7 @@ button { cursor: pointer; }
   .cta-word { font-size: 18rem; }
   .site-footer { grid-template-columns: 1fr; gap: 42px; padding: 60px 20px 28px; }
   .footer-links { grid-column: 1; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .footer-instagram { grid-column: 1; grid-row: auto; }
+  .footer-socials { grid-column: 1; grid-row: auto; flex-direction: row; flex-wrap: wrap; gap: 16px 24px; }
   .footer-bottom { flex-direction: column; gap: 14px; margin-top: 10px; }
 }
 
