@@ -879,8 +879,8 @@ button { cursor: pointer; }
   display: block;
   border-radius: inherit;
   object-fit: cover;
-  object-position: 50% 66%;
-  transform: scale(1.2);
+  object-position: center;
+  transform: scale(1.05);
 }
 .recurring-orbit::after { position: absolute; inset: 9px; border: 1px dashed rgba(101, 198, 227, 0.38); border-radius: 50%; content: ""; animation: spin 18s linear infinite; }
 .recurring-copy, .recurring-when, .recurring-city { position: relative; z-index: 1; }
