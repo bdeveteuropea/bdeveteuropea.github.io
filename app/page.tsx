@@ -610,7 +610,7 @@ export default function Home() {
 
           <div className="agenda-recurring" data-reveal>
             <div className="recurring-orbit" aria-hidden="true">
-              <img src="/running-club.jpg" alt="" />
+              <img src="/running-club-photo.jpg" alt="" />
             </div>
             <div className="recurring-copy">
               <p>LE RENDEZ-VOUS HEBDOMADAIRE</p>
