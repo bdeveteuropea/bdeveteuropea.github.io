@@ -867,11 +867,22 @@ button { cursor: pointer; }
   width: 82px;
   aspect-ratio: 1;
   place-items: center;
+  overflow: hidden;
   border: 1px solid rgba(223, 189, 114, 0.55);
   border-radius: 50%;
+  background: #173451;
+  box-shadow: 0 12px 28px rgba(3, 13, 24, 0.28);
+}
+.recurring-orbit img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: 50% 66%;
+  transform: scale(1.2);
 }
 .recurring-orbit::after { position: absolute; inset: 9px; border: 1px dashed rgba(101, 198, 227, 0.38); border-radius: 50%; content: ""; animation: spin 18s linear infinite; }
-.recurring-orbit span { color: var(--gold-light); font-size: 0.58rem; font-weight: 900; letter-spacing: 0.18em; }
 .recurring-copy, .recurring-when, .recurring-city { position: relative; z-index: 1; }
 .recurring-copy p { margin: 0 0 9px; color: var(--cyan); font-size: 0.56rem; font-weight: 850; letter-spacing: 0.18em; }
 .recurring-copy h3 { margin: 0; font-size: clamp(2rem, 3.3vw, 3.8rem); font-weight: 650; letter-spacing: -0.055em; }
